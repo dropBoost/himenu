@@ -1,9 +1,10 @@
 import { supabaseServer } from '@/lib/supabaseServerClient'
 import FoodCard from '../../components/foodCard'
 
-export default async function PagePizzeria() {
+export default async function PagePizzeClassiche() {
 
-  const { data: menu, error } = await supabaseServer.from('menu').select('*').eq('categoria', 'pizza').eq('attivo', 'true')
+  const { data: menu, error } = await supabaseServer.from('menu').select('*').eq('classiche', 'true').eq('attivo', 'true')
+
 
   if (error) {
     return <div>Errore: {error.message}</div>
