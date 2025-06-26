@@ -37,9 +37,10 @@ const Navbar = (props) => {
 
         {isOpen && (
             <div className="md:hidden fixed inset-0 bg-neutral-900 z-40 flex flex-col justify-center items-center space-y-8 text-xl">
-            <Link href="/" onClick={toggleMenu} className="hover:text-brand-500">Home</Link>
-            <Link href="/about" onClick={toggleMenu} className="hover:text-brand-500">About</Link>
-            <Link href="/contact" onClick={toggleMenu} className="hover:text-brand-500">Contact</Link>
+
+                {link.map((link, index) => (
+                    <Link key={index} href={link.link} onClick={toggleMenu}  className="hover:text-brand-500">{link.nome}</Link>
+                ))}
 
             {/* Icone social in fondo */}
             <div className="absolute bottom-10 flex space-x-6">
