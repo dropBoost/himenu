@@ -18,7 +18,7 @@ export default async function PagePizzeria() {
     <div className='p-10 bg-stone-100'>
         <div className='grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5'>
         {menu.map(pizza => (
-            <FoodCard key={pizza.id} img={pizza.immagine} cate={pizza.categoria} nome={pizza.nome} ingredienti={pizza.ingredienti} prezzo={pizza.prezzo} attivo={pizza.attivo} />
+            <FoodCard key={pizza.id} img={pizza.imgUrl} cate={pizza.categoria} nome={pizza.nome} ingredienti={pizza.ingredienti} prezzo={pizza.prezzo} attivo={pizza.attivo} />
         ))}
         </div>
     </div>
