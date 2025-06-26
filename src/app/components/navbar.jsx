@@ -9,6 +9,7 @@ const Navbar = (props) => {
 
     const logo = props.logo
     const background = props.background
+    const link = props.link
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -17,13 +18,15 @@ const Navbar = (props) => {
     return (
         <nav className={`${background} fixed top-0 inset-x-0 z-50 shadow-md`}>
         <div className="max-w-7xl mx-auto h-16 flex px-4 sm:px-6 lg:px-8 items-center justify-between">
-            <Link href="/" className="text-xl font-bold text-blue-600">
+            <Link href="/" className="text-xl font-bold text-brand-500">
                 <Image src={logo} width={50} height={50}/>
             </Link>
             <div className="hidden md:flex space-x-6">
-            <Link href="/" className="hover:text-blue-600">Home</Link>
-            <Link href="/about" className="hover:text-blue-600">About</Link>
-            <Link href="/contact" className="hover:text-blue-600">Contact</Link>
+
+                {link.map((link, index) => (
+                    <Link key={index} href={link.link} className="hover:text-brand-500">{link.nome}</Link>
+                ))}
+
             </div>
             <div className="md:hidden">
             <button onClick={toggleMenu}>
@@ -34,19 +37,19 @@ const Navbar = (props) => {
 
         {isOpen && (
             <div className="md:hidden fixed inset-0 bg-neutral-900 z-40 flex flex-col justify-center items-center space-y-8 text-xl">
-            <Link href="/" onClick={toggleMenu} className="hover:text-blue-600">Home</Link>
-            <Link href="/about" onClick={toggleMenu} className="hover:text-blue-600">About</Link>
-            <Link href="/contact" onClick={toggleMenu} className="hover:text-blue-600">Contact</Link>
+            <Link href="/" onClick={toggleMenu} className="hover:text-brand-500">Home</Link>
+            <Link href="/about" onClick={toggleMenu} className="hover:text-brand-500">About</Link>
+            <Link href="/contact" onClick={toggleMenu} className="hover:text-brand-500">Contact</Link>
 
             {/* Icone social in fondo */}
             <div className="absolute bottom-10 flex space-x-6">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-500">
                 <Facebook size={24} />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-500">
                 <Twitter size={24} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-500">
                 <Instagram size={24} />
                 </a>
             </div>
