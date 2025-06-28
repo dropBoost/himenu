@@ -12,7 +12,6 @@ export default function FoodCard (props) {
         <>
         <div className="flex flex-col w-full justify-between items-start bg-white p-6 rounded-3xl">
             <div className="flex flex-col items-start justify-start w-full">
-            <span className="rounded-full border border-red-700 text-red-500 text-xs pe-2 ps-2" >{cate}</span>
             <Image src={img} quality={30} height={150} width={150} className="rounded-3xl mt-4 mb-2 border border-neutral-200"/>
             </div>
             

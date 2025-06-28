@@ -1,12 +1,29 @@
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+
 export default function LayoutMenuBurger ({ children }) {
+
+  const linkNavigazione = [
+    {nome:'smash',link:'/smash'},
+    {nome:'hot-dog', link:'/hotdog'},
+    {nome:'tacos', link:'/tacos'},
+    {nome:'bao', link:'/bao'},
+    {nome:'piadine', link:'/piadine'},
+    {nome:'fries', link:'/fries'},   
+    {nome:'beverage', link:'/beverage'},    
+  ]
+
   return (
     <>
-        <div className="flex flex-col justify-center items-center rounded bg-brand-400 h-screen w-screen">
-            <div className="w-[80vw] h-[7vh] bg-white rounded-s-3xl rounded-e-lg overflow-auto">
-              ciao
+        <div className="flex flex-col justify-center items-center rounded bg-white h-screen w-screen">
+            <div className="w-[100vw] h-[6vh] border-b border-white">
+              <Navbar logo={"/logo-white.png"} background={"bg-neutral-900"} link={linkNavigazione}/>
             </div>
-            <div className="w-[80vw] h-[85vh] bg-white rounded-s-3xl rounded-e-lg overflow-auto">
-                {children}
+            <div className="flex w-[80vw] flex-1 bg-stone-100 justify-start items-start overflow-auto">
+              {children}
+            </div>
+            <div className="w-[100vw] h-[6vh] flex justify-center items-center border-t bg-white border-white overflow-auto">
+              <Footer/>
             </div>
         </div>
     </>
