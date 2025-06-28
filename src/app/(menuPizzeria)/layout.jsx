@@ -7,6 +7,8 @@ export default function LayoutMenuPizzeria ({ children }) {
     {nome:'classiche',link:'/classiche'},
     {nome:'le Speciali', link:'/le-speciali'},
     {nome:'Scialò Edition', link:'/scialo-edition'},
+    {nome:'sfizi', link:'/sfizi'},   
+    {nome:'beverage', link:'/beverage-pizzeria'},    
   ]
 
   return (

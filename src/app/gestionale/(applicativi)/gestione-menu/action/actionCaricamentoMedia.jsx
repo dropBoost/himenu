@@ -11,12 +11,14 @@ export const postMediaAction = async (formData) => {
   const classiche = formData.get('classiche')=== 'on';
   const speciali = formData.get('speciali')=== 'on';
   const scialoEdition = formData.get('scialoEdition')=== 'on';
-  const smashBurger = formData.get('smashBurger')=== 'on';
+  const panini = formData.get('panini')=== 'on';
   const bibite = formData.get('bibite')=== 'on';
   const tacos = formData.get('tacos')=== 'on';
   const toast = formData.get('toast')=== 'on';
   const piadina = formData.get('piadina')=== 'on';
   const sfizi = formData.get('sfizi')=== 'on';
+  const hotdog = formData.get('hotdog')=== 'on';
+  const bao = formData.get('bao')=== 'on';
   const senzaGlutine = formData.get('senzaGlutine')=== 'on';
   const file = formData.get('file');
   const nome = formData.get('nome')
@@ -72,12 +74,14 @@ export const postMediaAction = async (formData) => {
         classiche,
         speciali,
         scialoEdition,
-        smashBurger,
+        panini,
         bibite,
         tacos,
         toast,
         piadina,
         sfizi,
+        hotdog,
+        bao,
         senzaGlutine,
         nome,
         ingredienti,

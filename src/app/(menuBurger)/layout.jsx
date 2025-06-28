@@ -4,18 +4,18 @@ import Footer from "../components/footer";
 export default function LayoutMenuBurger ({ children }) {
 
   const linkNavigazione = [
-    {nome:'smash',link:'/smash'},
+    {nome:'panini',link:'/panini'},
     {nome:'hot-dog', link:'/hotdog'},
     {nome:'tacos', link:'/tacos'},
     {nome:'bao', link:'/bao'},
     {nome:'piadine', link:'/piadine'},
-    {nome:'fries', link:'/fries'},   
+    {nome:'sfizi', link:'/sfizi'},   
     {nome:'beverage', link:'/beverage'},    
   ]
 
   return (
     <>
-        <div className="flex flex-col justify-center items-center rounded bg-white h-screen w-screen">
+        <div className="flex flex-col justify-center items-center rounded bg-brand-500 h-screen w-screen">
             <div className="w-[100vw] h-[6vh] border-b border-white">
               <Navbar logo={"/logo-white.png"} background={"bg-neutral-900"} link={linkNavigazione}/>
             </div>

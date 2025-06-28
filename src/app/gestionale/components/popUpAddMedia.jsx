@@ -64,7 +64,7 @@ export default function AddElementsPopUp (props) {
                             >
                                 <option value="" disabled>Seleziona tipologia file</option>
                                 <option value="pizza">Pizza</option>
-                                <option value="burger">Burger</option>
+                                <option value="burger">Panini</option>
                                 <option value="streetFood">Street Food</option>
                                 <option value="antipasti">Antipasti</option>
                                 <option value="bibite">Bibite</option>
@@ -120,10 +120,10 @@ export default function AddElementsPopUp (props) {
                             <div className="flex justify-start items-center m-4">
                             <input
                                 type="checkbox"
-                                id="smash"
-                                name="smash"
+                                id="panini"
+                                name="panini"
                             />
-                            <label htmlFor="smash" className="text-white text-xs ms-1">Smash burger</label>
+                            <label htmlFor="panini" className="text-white text-xs ms-1">Panini</label>
                             </div>
                             {/* Bibite */}
                             <div className="flex justify-start items-center m-4">
@@ -169,6 +169,24 @@ export default function AddElementsPopUp (props) {
                                 name="sfizi"
                             />
                             <label htmlFor="sfizi" className="text-white text-xs ms-1">Sfizi</label>
+                            </div>
+                            {/* HOTDOG */}
+                            <div className="flex justify-start items-center m-4">
+                            <input
+                                type="checkbox"
+                                id="hotdog"
+                                name="hotdog"
+                            />
+                            <label htmlFor="hotdog" className="text-white text-xs ms-1">Hot-Dog</label>
+                            </div>
+                            {/* BAO */}
+                            <div className="flex justify-start items-center m-4">
+                            <input
+                                type="checkbox"
+                                id="bao"
+                                name="bao"
+                            />
+                            <label htmlFor="bao" className="text-white text-xs ms-1">Bao</label>
                             </div>
                             {/* Senza Glutine */}
                             <div className="flex justify-start items-center m-4">

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
     <div className="flex md:flex-row flex-col">
-      <Link href="/burger" >
+      <Link href="/smascialo" >
       <div className="flex justify-center flex-col items-center md:h-screen h-[50vh] md:w-[50vw] md-screen bg-white text-white">
         <Image src="/logo-dark.png" width={150} height={600} quality={10} alt="logo smascialò"/>
         <span className="text-xl mt-5 bg-brand-400 hover:bg-white hover:border-2 hover:border-brand-400 hover:text-brand-400 ps-3 pe-3 text transition">ENTRA</span>
