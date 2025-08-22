@@ -15,7 +15,7 @@ export default async function PagePizzeSpeciali() {
 
   return (
     <>
-    <div className='grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 p-10'>
+    <div className='grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 p-5 border h-full w-full rounded-xl gap-2 overflow-auto'>
       {menu.map(pizza => (
           <FoodCard key={pizza.id} img={pizza.imgUrl} cate={pizza.categoria} nome={pizza.nome} ingredienti={pizza.ingredienti} prezzo={pizza.prezzo} attivo={pizza.attivo} />
       ))}

@@ -1,26 +1,33 @@
-import { supabaseServer } from '@/lib/supabaseServerClient'
-import ListCard from '@/app/components/listcard'
-import FoodCard from '../../components/foodCard'
+'use client'
 
-export default async function PageBurger() {
+import Link from 'next/link'
 
-  const { data: menu, error } = await supabaseServer.from('menu').select('*').in('categoria', ['burger', 'streetFood', 'antipasti']).eq('attivo', 'true')
+export default function PageBurger() {
 
-  if (error) {
-    return <div>Errore: {error.message}</div>
-  }
+    const linkNavigazione = [
+      {nome:'panini',link:'/panini'},
+      {nome:'hot-dog', link:'/hotdog'},
+      {nome:'tacos', link:'/tacos'},
+      {nome:'bao', link:'/bao'},
+      {nome:'piadine', link:'/piadine'},
+      {nome:'sfizi', link:'/sfizi'},   
+      {nome:'beverage', link:'/beverage'},    
+    ]
 
-  if (!menu || menu.length === 0) {
-    return <div className='flex justify-center items-center h-full w-full text-brand-500'>Nessun elemento trovato nel menù.</div>
-  }
-
+  
   return (
     <>
-    <div className='grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 p-10'>
-      {menu.map(burger => (
-          <ListCard key={burger.id} img={burger.imgUrl} cate={burger.categoria} nome={burger.nome} ingredienti={burger.ingredienti} prezzo={burger.prezzo} attivo={burger.attivo} />
-      ))}
-    </div>
+    <div className="flex flex-col p-5 border h-full w-full rounded-xl gap-2 overflow-auto">
+        {linkNavigazione.map((link, index) => (
+          <Link href={link.link} key={index} >
+            <div className="flex flex-row items-center justify-start gap-3 h-fit bg-brand-500 rounded-xl px-2 py-2 hover:bg-neutral-200 text-white hover:text-brand-500 hover:font-extrabold">
+                {link.img ? <Image src={`${link.img}`} width={100} height={100} quality={30} className="w-[100px] h-[100px] object-cover rounded" alt={link.nome}/> : null}
+                <span className="w-full uppercase border hover:border-brand-500 px-4 py-1 rounded-lg">{link.nome}</span>
+              
+            </div>
+          </Link>
+        ))}
+      </div>
     </>
   )
 }

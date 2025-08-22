@@ -1,8 +1,7 @@
 import { supabaseServer } from '@/lib/supabaseServerClient'
-import ListCard from '@/app/components/listcard'
 import FoodCard from '../../components/foodCard'
 
-export default async function PageSfizi() {
+export default async function PagePizzeriaSfizi() {
 
   const { data: menu, error } = await supabaseServer.from('menu').select('*').eq('sfizi', 'true').eq('attivo', 'true')
 
@@ -11,14 +10,14 @@ export default async function PageSfizi() {
   }
 
   if (!menu || menu.length === 0) {
-    return <div className='flex justify-center items-center h-full w-full text-brand-500'>Nessun elemento trovato nel menù.</div>
+    return <div>Nessun elemento trovato nel menù.</div>
   }
 
   return (
     <>
     <div className='grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 p-5 border h-full w-full rounded-xl gap-2 overflow-auto'>
-      {menu.map(burger => (
-          <ListCard key={burger.id} img={burger.imgUrl} cate={burger.categoria} nome={burger.nome} ingredienti={burger.ingredienti} prezzo={burger.prezzo} attivo={burger.attivo} />
+      {menu.map(pizza => (
+          <FoodCard key={pizza.id} cate={pizza.categoria} nome={pizza.nome} ingredienti={pizza.ingredienti} prezzo={pizza.prezzo} attivo={pizza.attivo} />
       ))}
     </div>
     </>

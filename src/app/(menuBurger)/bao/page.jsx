@@ -16,7 +16,7 @@ export default async function PageBao() {
 
   return (
     <>
-    <div className='grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 p-10'>
+    <div className='grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 p-5 border h-full w-full rounded-xl gap-2 overflow-auto'>
       {menu.map(burger => (
           <ListCard key={burger.id} img={burger.imgUrl} cate={burger.categoria} nome={burger.nome} ingredienti={burger.ingredienti} prezzo={burger.prezzo} attivo={burger.attivo} />
       ))}
