@@ -42,7 +42,8 @@ export default function CardMenuItems(props) {
                     {attivo =="true" ? "on" : "off"}
                 </div>
             </div>
-            <Image src={linkMedia} width={40} height={40} quality={20} layout={"responsive"} alt={nome} className='rounded-3xl'/>
+            {linkMedia ? <Image src={linkMedia} width={40} height={40} quality={20} layout={"responsive"} alt={nome} className='rounded-3xl'/> : null}
+            
             <div className="flex-col mb-2">
                 <div className="bg-appColor-500 flex p-1 rounded-full w-full h-[20px] justify-center items-center m-1">
                     <span className="lg:text-[0.7rem] text-[0.5rem] font-bold text-neutral-900 truncate" >{nome}</span>
