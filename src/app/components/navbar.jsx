@@ -24,11 +24,11 @@ const Navbar = (props) => {
             <div className="hidden md:flex space-x-6">
 
                 {link.map((link, index) => (
-                    <Link key={index} href={link.link} className="hover:text-brand-500">{link.nome}</Link>
+                    <Link key={index} href={link.link} className="hover:text-brand-500 text-white">{link.nome}</Link>
                 ))}
 
             </div>
-            <div className="md:hidden">
+            <div className="md:hidden text-white">
             <button onClick={toggleMenu}>
                 {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -36,26 +36,26 @@ const Navbar = (props) => {
         </div>
 
         {isOpen && (
-            <div className="md:hidden fixed inset-0 bg-neutral-900 z-40 flex flex-col justify-center items-center space-y-8 text-xl">
+            <div className="md:hidden fixed inset-0 bg-neutral-950 z-40 flex flex-col justify-center items-center space-y-8 text-xl">
 
                 {link.map((link, index) => (
-                    <Link key={index} href={link.link} onClick={toggleMenu}  className="hover:text-brand-500">{link.nome}</Link>
+                    <Link key={index} href={link.link} onClick={toggleMenu}  className="hover:text-brand-500 border-b text-white">{link.nome}</Link>
                 ))}
 
             {/* Icone social in fondo */}
             <div className="absolute bottom-10 flex space-x-6">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-500">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-500 text-white">
                 <Facebook size={24} />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-500">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-500 text-white">
                 <Twitter size={24} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-500">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-500 text-white">
                 <Instagram size={24} />
                 </a>
             </div>
 
-            <button onClick={toggleMenu} className="absolute top-6 right-6">
+            <button onClick={toggleMenu} className="absolute top-6 right-6 text-white hover:text-brand-500">
                 <X size={28} />
             </button>
             </div>
